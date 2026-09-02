@@ -1,5 +1,9 @@
 function CompFirst() {
-    return "ggggg";
+    return (
+        <>
+            <p>pppp</p>
+        </>
+    );
 }
 
 export default CompFirst;
