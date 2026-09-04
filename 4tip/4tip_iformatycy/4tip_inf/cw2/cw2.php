@@ -73,6 +73,12 @@
 
         ?>
     </section>
+    <section>
+        Napisz fragment kodu który tworzy zmienną $age i przypisuje jej wartość 25.
+        Następnie sprawdź, czy $age jest większe niż 18. Jeśli tak, wyświetl komunikat
+        "Jesteś pełnoletni", w przeciwnym razie wyświetl "Nie jesteś pełnoletni".
+        przyklad użycia instrukcji warunkowej if-else lub operatora warunkowego ?:
+    </section>
 </body>
 
 </html>
