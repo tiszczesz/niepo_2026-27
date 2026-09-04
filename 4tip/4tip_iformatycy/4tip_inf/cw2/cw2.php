@@ -53,6 +53,26 @@
         }
         ?>
     </section>
+    <section>
+        <div>Operatory: </div>
+        <?php
+        $a = 5;
+        $b = 10;
+        echo "a = $a, b = $b \n<br>";
+        echo "$a + $b = " . ($a + $b) .  "\n<br>";
+        echo "$a - $b = " . ($a - $b) . "\n<br>";
+        echo "$a * $b = " . ($a * $b) . "\n<br>";
+        //użycie instrukcji warunkowej if do sprawdzenia dzielenia przez zero
+        if ($b === 0) {
+            echo "$a / $b = DZIELENIE PRZEZ ZERO\n<br>";
+        } else {
+            echo "$a / $b = " . ($a / $b) . "\n<br>";
+        }
+        //użycie operatora ?
+        echo "$a / $b = " . ($b !== 0 ? ($a / $b) : "DZIELENIE PRZEZ ZERO") . "\n<br>";
+
+        ?>
+    </section>
 </body>
 
 </html>
