@@ -1,9 +1,10 @@
 # Dodawanie obrazka do aplikacji WPF
 
-W WPF można dodać obrazek na dwa sposoby:
+W WPF można dodać obrazek na kilka sposobów:
 
 1. **Z poziomu designera** – przez kontrolkę `Image`.
 2. **Z poziomu kodu C#** – ustawiając źródło obrazu w kodzie.
+3. **Z katalogu aplikacji** – np. z podfolderu `Images` obok pliku `.exe`.
 
 ## 1. Dodawanie obrazka w designerze
 
@@ -100,12 +101,67 @@ private void LoadImageFromDisk()
 }
 ```
 
+## 3a. Ładowanie obrazka z katalogu aplikacji (`Images`)
+
+Jeśli plik obrazu znajduje się obok aplikacji, np. w `Images/logo.png` względem katalogu uruchomieniowego `.exe`, można wykryć ścieżkę dynamicznie:
+
+```csharp
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Media.Imaging;
+
+private void LoadImageFromAppDirectory()
+{
+    // Katalog, z którego działa aplikacja (np. ...\bin\Debug\netX\)
+    string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+    // Ścieżka do obrazka w podkatalogu Images
+    string imagePath = Path.Combine(appDirectory, "Images", "logo.png");
+
+    if (!File.Exists(imagePath))
+    {
+        MessageBox.Show($"Nie znaleziono pliku: {imagePath}");
+        return;
+    }
+
+    var bitmap = new BitmapImage();
+    bitmap.BeginInit();
+    bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
+    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+    bitmap.EndInit();
+
+    MyImage.Source = bitmap;
+}
+```
+
+Możesz wywołać tę metodę np. w konstruktorze po `InitializeComponent()`:
+
+```csharp
+public MainWindow()
+{
+    InitializeComponent();
+    LoadImageFromAppDirectory();
+}
+```
+
+> Uwaga: aby plik był dostępny w katalogu uruchomieniowym, ustaw dla niego:
+> - **Build Action**: `Content`
+> - **Copy to Output Directory**: `Copy if newer` (lub `Copy always`)
+
 ## 4. Wskazówki
 
-- Dla obrazków w projekcie najlepiej używać `Resource`.
-- Do prostego podglądu w designerze wystarczy ścieżka względna.
-- Dla obrazków z dysku pamiętaj o poprawnej ścieżce i uprawnieniach.
+- Gdy obrazek jest częścią projektu i ma być osadzony w aplikacji, używaj:
+  - **Build Action**: `Resource`
+  - ładowanie przez `Source="Images/logo.png"` lub `pack://application:,,,/Images/logo.png`
+- Gdy obrazek ma być plikiem obok aplikacji (np. `.\Images\logo.png`), używaj:
+  - **Build Action**: `Content`
+  - **Copy to Output Directory**: `Copy if newer` lub `Copy always`
+  - ładowanie przez ścieżkę zbudowaną w C# na bazie `AppDomain.CurrentDomain.BaseDirectory`
+- Do prostego podglądu w designerze zwykle wystarczy ścieżka względna.
+- Przy ładowaniu z dysku zawsze sprawdzaj, czy plik istnieje (`File.Exists`) i czy aplikacja ma uprawnienia dostępu.
 
 ## 5. Podsumowanie
 
-W WPF obrazek możesz dodać zarówno w XAML, jak i w C#. Najwygodniejsze jest użycie zasobów projektu oraz kontrolki `Image`.
+W WPF obrazek możesz dodać zarówno w XAML, jak i w C#. Najwygodniejsze jest użycie zasobów projektu oraz kontrolki `Image`.  
+Jeśli obraz ma być podmienialny bez rekompilacji, dobrym wyborem jest trzymanie go w katalogu aplikacji (np. `Images`) i ładowanie dynamicznie po wykryciu ścieżki uruchomieniowej.
