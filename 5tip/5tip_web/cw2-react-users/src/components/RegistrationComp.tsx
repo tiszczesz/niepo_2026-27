@@ -6,7 +6,7 @@ const RegistrationComp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [result, setResult] = useState('Autor: XXXXXXXXX');
     function handleRegistration() {
-        
+        alert(`Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
     }
 
     return (
