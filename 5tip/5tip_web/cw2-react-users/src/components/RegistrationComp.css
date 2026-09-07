@@ -1,0 +1,30 @@
+.registration {
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #ccc;
+  width: 300px;
+  min-height: 400px;
+}
+.registration h2 {
+  background-color: #008080;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+}
+.registration label{
+    text-align: left;
+    display: block;
+}
+.registration input[type="text"],
+.registration input[type="email"],
+.registration input[type="password"] {
+    margin-bottom: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+}
+button{
+    margin-top: 20px;
+}
