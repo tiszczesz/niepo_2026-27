@@ -5,8 +5,8 @@ const RegistrationComp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [result, setResult] = useState('Autor: XXXXXXXXX');
-    function handleRegistration(e: any) {
-        throw new Error('Function not implemented.');
+    function handleRegistration() {
+        
     }
 
     return (
@@ -34,7 +34,7 @@ const RegistrationComp = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Wpisz hasło" />
-            <button onclick={(e)=>handleRegistration(e)}>ZATWIERDŹ</button>
+            <button onclick={()=>handleRegistration()}>ZATWIERDŹ</button>
             <section>{result}</section>
         </section>
     )
