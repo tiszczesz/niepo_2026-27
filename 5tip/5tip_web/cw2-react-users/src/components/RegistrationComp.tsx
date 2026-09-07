@@ -6,9 +6,18 @@ const RegistrationComp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [result, setResult] = useState('Autor: XXXXXXXXX');
     function handleRegistration() {
-        alert(`Email: ${email}, Password: 
-            ${password}, Confirm Password:
-             ${confirmPassword}`);
+        // alert(`Email: ${email}, Password: 
+        //     ${password}, Confirm Password:
+        //      ${confirmPassword}`);
+        if(!email.includes('@')){
+            setResult('Nieprawidłowy adres e-mail');
+            return;
+        }
+        if(password.length<3 || password !== confirmPassword){
+            setResult('Hasła się różnią lub są za krótkie');
+            return;
+        }
+        setResult(`Witaj ${email}`);
     }
 
     return (
