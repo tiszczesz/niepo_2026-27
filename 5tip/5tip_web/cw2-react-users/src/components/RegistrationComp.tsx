@@ -6,7 +6,9 @@ const RegistrationComp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [result, setResult] = useState('Autor: XXXXXXXXX');
     function handleRegistration() {
-        alert(`Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+        alert(`Email: ${email}, Password: 
+            ${password}, Confirm Password:
+             ${confirmPassword}`);
     }
 
     return (
@@ -19,22 +21,22 @@ const RegistrationComp = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Wpisz email" />
-           
+
             <label htmlFor="password">
                 Podaj hasło:
             </label>
-            <input id="password" type="password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Wpisz hasło" />
+            <input id="password" type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Wpisz hasło" />
             <label htmlFor="password">
                 Powtórz hasło:
             </label>
-            <input id="passwordRepeat" type="password" 
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Wpisz hasło" />
-            <button onclick={()=>handleRegistration()}>ZATWIERDŹ</button>
+            <input id="passwordRepeat" type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Wpisz hasło" />
+            <button onClick={() => handleRegistration()}>ZATWIERDŹ</button>
             <section>{result}</section>
         </section>
     )
