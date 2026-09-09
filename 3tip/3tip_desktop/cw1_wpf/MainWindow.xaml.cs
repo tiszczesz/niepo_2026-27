@@ -20,5 +20,16 @@ namespace cw1_wpf
         {
             InitializeComponent();
         }
+
+        private void ShowDate(object sender, RoutedEventArgs e)
+        {
+            DateOnly date = DateOnly.FromDateTime(DateTime.Now);
+            Info.Content = date.ToString("yyyy-MM-dd");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

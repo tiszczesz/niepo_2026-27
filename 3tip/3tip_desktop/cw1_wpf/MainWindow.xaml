@@ -6,8 +6,22 @@
         xmlns:local="clr-namespace:cw1_wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-   <Canvas>
-        <Button Content="Button" Canvas.Left="134" Canvas.Top="94"/>
-
+    <Canvas>
+        <Button Content="Wyświetl datę" FontSize="20" Canvas.Left="10" Canvas.Top="10" Height="69" 
+                Width="286" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowDate"
+               />
+        <Label x:Name="Info" FontSize="30" FontWeight="Bold" 
+               Foreground="Green"
+               Background="LightGreen"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"
+               RenderTransformOrigin="32.563,3.531" Canvas.Left="327" 
+               Canvas.Top="10" Height="69" 
+               Width="331" HorizontalAlignment="Center" 
+               VerticalAlignment="Center"></Label>
+        <TextBox Height="58" Canvas.Left="10" VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Center" FontSize="24"
+                   TextWrapping="Wrap" Text="" Canvas.Top="106" Width="286" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="Button" Canvas.Left="10" Canvas.Top="178" Height="78" Width="306" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click"/>
     </Canvas>
 </Window>
