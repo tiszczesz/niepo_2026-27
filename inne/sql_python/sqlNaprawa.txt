@@ -1,0 +1,5 @@
+1. przejść w xampp do folder mysql
+2. stworzyć nowy folder data a stary nazwać jakoś nie wiem np. data_old
+3. z starej daty zaznaczyć bazy danych stworzone przez użytkowników i ibdata1 i wkleić to do nowej daty
+4. przejść do backup i zaznaczyć wszystko oprócz ibdata1, skopiować i wkleić do daty
+5. i powinien działać jak nie działa to powtórzyć proces jeszcze raz
