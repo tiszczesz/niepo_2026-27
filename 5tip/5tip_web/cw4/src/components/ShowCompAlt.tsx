@@ -2,8 +2,6 @@ import { useState } from 'react';
 import piesek2 from '../assets/piesek2.jpg'
 import './ShowComp.css'
 
-
-
 const ShowCompAlt = () => {
     const [isChecked, setIsChecked] = useState(true);
     return (
