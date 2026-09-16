@@ -19,9 +19,28 @@
                Canvas.Top="10" Height="69" 
                Width="331" HorizontalAlignment="Center" 
                VerticalAlignment="Center"></Label>
-        <TextBox Height="58" Canvas.Left="10" VerticalContentAlignment="Center"
+        <TextBox Height="58" Canvas.Left="10"
+                 x:Name="TextBox"
+                 VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Center" FontSize="24"
                    TextWrapping="Wrap" Text="" Canvas.Top="106" Width="286" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button Content="Button" Canvas.Left="10" Canvas.Top="178" Height="78" Width="306" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click"/>
+        <Button Content="Button" FontSize="28" Canvas.Left="10" Canvas.Top="178" Height="78" Width="306" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button2_Click"/>
+        <Label Content="Label" FontSize="28" x:Name="Label2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Canvas.Left="370" Canvas.Top="178" Height="78" Width="240" 
+               HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Slider x:Name="Slider" Canvas.Left="10" Canvas.Top="322" 
+                TickFrequency="1" IsSnapToTickEnabled="True"
+                Minimum="0"
+                Maximum="100"
+                Width="306" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label  x:Name="ValueFromSlider" 
+                Content="{Binding ElementName=Slider, Path=Value, 
+ Mode=OneWay, StringFormat=wartość: {0:F0}}" 
+                Canvas.Left="424" 
+               Canvas.Top="300" FontSize="24" HorizontalAlignment="Left" 
+               VerticalAlignment="Center" Width="108"/>
     </Canvas>
 </Window>

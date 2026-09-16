@@ -27,9 +27,16 @@ namespace cw1_wpf
             Info.Content = date.ToString("yyyy-MM-dd");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+   
 
+        private void Button2_Click(object sender, RoutedEventArgs e) {
+            if(TextBox.Text.Trim().Length > 0)
+            {
+                Label2.Content = TextBox.Text;
+            }
+            else {
+                Label2.Content = "BRAK DANYCH";
+            }
         }
     }
 }
