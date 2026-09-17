@@ -9,3 +9,13 @@
    b. Wyświetla w konsoli napis Witaj imie nazwisko klasa
 
    c. Druga funkcja z dwoma argumentami int i zwraca wynik mnożenia int Times(int,int)
+
+```c#
+//definicja funkcji
+  int Times(int a, int b){
+    return a * b;
+  }
+//wywołanie
+Console.WriteLine(Times(4,5)) // 20
+
+```
