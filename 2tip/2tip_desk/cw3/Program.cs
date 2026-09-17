@@ -27,3 +27,11 @@ void ShowSum(int a, int b){
 //wywołanie funkcji ShowSum
 ShowSum(5, 10);
 ShowSum(24, 1);
+
+//funkcja bez argumentow nic nie zwracająca (void)
+void ShowHello()
+{
+    Console.WriteLine("Hello from function!");
+}
+//wywołanie funkcji ShowHello
+ShowHello();
