@@ -1,5 +1,5 @@
 ﻿int a = 5;
-int b = 6;
+int b = 0;
 //konkatenacja stringów
 Console.WriteLine(a + " + " + b + " = " + (a + b));
 //interpolacja stringów
