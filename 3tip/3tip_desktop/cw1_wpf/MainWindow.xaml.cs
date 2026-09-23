@@ -38,5 +38,9 @@ namespace cw1_wpf
                 Label2.Content = "BRAK DANYCH";
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            new ContactsWindow().ShowDialog();
+        }
     }
 }

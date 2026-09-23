@@ -42,5 +42,13 @@
                 Canvas.Left="424" 
                Canvas.Top="300" FontSize="24" HorizontalAlignment="Left" 
                VerticalAlignment="Center" Width="108"/>
+        <Label Content="{Binding ElementName=TextBox, Path=Text}" 
+               FontSize="28" x:Name="Label3"
+               
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Canvas.Left="370" Canvas.Top="106" Height="78" Width="240" 
+               HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Kontakty" Canvas.Left="583" Canvas.Top="368" Height="44" Width="207" Click="Button_Click"/>
     </Canvas>
 </Window>
