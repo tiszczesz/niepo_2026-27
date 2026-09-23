@@ -10,4 +10,10 @@ public class AppDbContext : DbContext
     } 
     //pole odpowiadające tabelce w db
      public DbSet<Book> Books { get; set; }
+
+    //dodanie danych do bazy podczas tworzenia bazy
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+    }
 }
