@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="ContactsWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <Label Content="Kontakty" FontSize="32"
+                   Background="AntiqueWhite"
+                   HorizontalContentAlignment="Center"></Label>
+            <StackPanel Orientation="Vertical">
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
