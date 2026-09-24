@@ -9,6 +9,9 @@ builder.Services.AddDbContext<AppDbContext>(
 );
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
+// app.MapGet("/", () => "Hello World!");
+//endpoint zwraca wszystkie ksiazki z bazy danych w formacie JSON
+app.MapGet("api/books",async (AppDbContext db) =>
+    await db.Books.ToListAsync<Book>()
+);
 app.Run();
