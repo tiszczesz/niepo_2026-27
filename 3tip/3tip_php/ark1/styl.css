@@ -1,0 +1,55 @@
+* {
+  font-family: 'Garamond', serif;
+  color: white;
+}
+header {
+  background-color: indigo;
+  text-align: center;
+  padding: 2px;
+}
+main {
+  display: flex;
+}
+.left,
+.right {
+  background-color: indigo;
+  height: 600px;
+}
+.middle {
+  background-color: black;
+  height: 600px;
+  overflow: scroll;
+}
+@media (min-width: 600px) {
+  main {
+    flex-direction: row;
+  }
+  .left,
+  .right {
+    width: 20%;
+  }
+  .middle {
+    width: 60%;
+  }
+}
+footer {
+  background-color: indigo;
+  height: 150px;
+}
+.points{
+    background-color: tomato;
+    border-radius: 50%;
+    padding: 5px;
+}
+li{
+    padding: 5px;
+}
+.middle .game{
+    float: left;
+    text-align: center;
+    padding: 3px;
+}
+input[type="text"]{
+   margin: 10px;
+   color: indigo;
+}
