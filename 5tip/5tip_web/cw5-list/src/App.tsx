@@ -21,7 +21,21 @@ function App() {
                 <th> --- </th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              {mycontacts.map(c => (
+                <tr>
+                  <td>{c.firstname}</td>
+                  <td>{c.lastname}</td>
+                  <td>{c.phone}</td>
+                  <td>
+                    <button className='btn btn-danger'>Usuń</button>
+                    &nbsp;
+                    <button className='btn btn-secondary'>Edytuj</button>
+                  </td>
+                </tr>
+              )
+              )}
+            </tbody>
           </table>
         </section>
         <section><h5>Dodanie nowego kontaku</h5></section>
