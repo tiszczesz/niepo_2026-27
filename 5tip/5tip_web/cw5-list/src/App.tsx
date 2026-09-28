@@ -6,6 +6,11 @@ import { useState } from 'react';
 function App() {
   const [mycontacts, setMyContacts] = useState<Contact[]>(contacts);
 
+  function handleDelete(id: number): void {
+    const contactsAfterDelete = mycontacts.filter(c => c.id !== id);
+    setMyContacts(contactsAfterDelete);
+  }
+
   return (
     <>
       <header><h1>Lista kontaktów</h1></header>
@@ -22,13 +27,16 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {mycontacts.map(c => (
+              {mycontacts.map(contact => (
                 <tr>
-                  <td>{c.firstname}</td>
-                  <td>{c.lastname}</td>
-                  <td>{c.phone}</td>
+                  <td>{contact.firstname}</td>
+                  <td>{contact.lastname}</td>
+                  <td>{contact.phone}</td>
                   <td>
-                    <button className='btn btn-danger'>Usuń</button>
+                    <button
+                      className='btn btn-danger'
+                      onClick={() => handleDelete(contact.id)}
+                    >Usuń</button>
                     &nbsp;
                     <button className='btn btn-secondary'>Edytuj</button>
                   </td>
