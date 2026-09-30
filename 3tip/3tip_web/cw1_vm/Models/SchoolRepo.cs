@@ -16,6 +16,7 @@ public class SchoolRepo
     {
         using var connection = new MySqlConnection(_connectionString);
         using var command = connection.CreateCommand();
+        connection.Open();
         command.CommandText = @"
             SELECT s.id, s.firstname, s.lastname, s.department_id, 
             d.id AS DepartmentId, d.name, d.description 
