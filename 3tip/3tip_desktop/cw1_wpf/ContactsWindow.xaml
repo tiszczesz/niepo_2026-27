@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="ContactsWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Height="*">
             <Label Content="Kontakty" FontSize="32"
                    Background="AntiqueWhite"
                    HorizontalContentAlignment="Center"></Label>
-            <StackPanel Orientation="Vertical">
-
+            <StackPanel Orientation="Horizontal">
+ <ListBox d:ItemsSource="{d:SampleData ItemCount=5}"/>
             </StackPanel>
+           <StackPanel Orientation="Horizontal" Height="100">
+               <Button Content="Dodaj" Width="200"></Button>
+               <Button Content="Dodaj" Width="200"></Button>
+           </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
