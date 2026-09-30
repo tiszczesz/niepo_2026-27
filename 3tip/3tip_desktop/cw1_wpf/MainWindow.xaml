@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cw1_wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Canvas>
         <Button Content="Wyświetl datę" FontSize="20" Canvas.Left="10" Canvas.Top="10" Height="69" 
                 Width="286" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowDate"

@@ -5,19 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cw1_wpf"
         mc:Ignorable="d"
-        Title="ContactsWindow" Height="450" Width="800">
+        Title="ContactsWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <StackPanel Orientation="Vertical" Height="*">
-            <Label Content="Kontakty" FontSize="32"
-                   Background="AntiqueWhite"
-                   HorizontalContentAlignment="Center"></Label>
-            <StackPanel Orientation="Horizontal">
- <ListBox d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Height="Auto">
+                <ListBox
+                    x:Name="LbContacts"
+                    d:ItemsSource="{d:SampleData ItemCount=5}" Width="500"/>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="Dodaj" Width="200" Click="Button_Click"/>
+                    <Button Content="Edytuj" Width="200"/>
+                </StackPanel>
             </StackPanel>
-           <StackPanel Orientation="Horizontal" Height="100">
-               <Button Content="Dodaj" Width="200"></Button>
-               <Button Content="Dodaj" Width="200"></Button>
-           </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

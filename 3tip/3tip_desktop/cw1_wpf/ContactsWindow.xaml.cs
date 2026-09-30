@@ -1,5 +1,7 @@
-﻿using System;
+﻿using cw1_wpf.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,9 +19,28 @@ namespace cw1_wpf
     /// </summary>
     public partial class ContactsWindow : Window
     {
+        private ObservableCollection<Contact> contacts;
         public ContactsWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            contacts = new ObservableCollection<Contact>(ContactRepo.GetContacts());
+            LbContacts.ItemsSource = contacts;
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Contact c1 = new Contact()
+            {
+                Firstname = "Nowy",
+                Lastname = "Kontakt",
+                Phone = "123456789"
+            };
+            contacts.Add(c1);
         }
     }
 }
