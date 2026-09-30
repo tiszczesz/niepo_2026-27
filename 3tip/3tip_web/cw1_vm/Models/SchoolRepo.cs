@@ -20,7 +20,32 @@ public class SchoolRepo
             SELECT s.id, s.firstname, s.lastname, s.department_id, 
             d.id AS DepartmentId, d.name, d.description 
             FROM Students s JOIN Departments d ON s.department_id = d.id;";
-        
+        using var reader = command.ExecuteReader();
+        var students = new List<StudentDepartmentVM>();
+        while (reader.Read())
+        {
+            students.Add(new StudentDepartmentVM
+            {
+                Student = new Student
+                {
+                    Id = reader.GetInt32("id"),
+                    Firstname = reader.GetString("firstname"),
+                    Lastname = reader.GetString("lastname"),
+                    DepartmentId = reader.GetInt32("department_id")
+                },
+                Department = new Department
+                {
+                    Id = reader.GetInt32("DepartmentId"),
+                    Name = reader.GetString("name"),
+                    Description = reader.GetString("description")
+                }
+            });
+        }
+        return students;
     }
 
 }
+
+  
+
+
