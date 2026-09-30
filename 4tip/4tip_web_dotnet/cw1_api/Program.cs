@@ -2,12 +2,24 @@ using cw1_api.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+//ustawienie CORS dla localhost
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 string connString = builder.Configuration.GetConnectionString("sqlite")
    ?? "Data Source=app.db";
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlite(connString)
 );
 var app = builder.Build();
+//ustawienie CORS dla localhost
+app.UseCors();
 
 // app.MapGet("/", () => "Hello World!");
 //endpoint zwraca wszystkie ksiazki z bazy danych w formacie JSON
