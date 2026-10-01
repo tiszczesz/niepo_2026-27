@@ -26,3 +26,22 @@ Ex1();
 // int[] GenerTab(int size){...}
 // napisz też funkcję wyświetlajaca tablice
 // void ShowTab(int[] tab){...}
+int[] GenerTab(int size)
+{
+    int[] result = new int[size];
+   Random rnd = new Random(); 
+   for(int i=0; i < result.Length; i++)
+    {
+        result[i] = rnd.Next(100);
+    }
+    return result;
+}
+void ShowTab(int[] tab)
+{
+    foreach(int elem in tab)
+    {
+        Console.Write(elem+" ");
+    }
+    Console.WriteLine();
+}
+ShowTab(GenerTab(22));
