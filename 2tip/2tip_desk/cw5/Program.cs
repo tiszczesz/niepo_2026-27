@@ -44,4 +44,28 @@ void ShowTab(int[] tab)
     }
     Console.WriteLine();
 }
-ShowTab(GenerTab(22));
+// ShowTab(GenerTab(22));
+
+void Ex2()
+{
+   //tablice wielowymiarowe 
+   Random rnd = new Random();
+   int [,] tab2D = new int[10,20];
+   for(int i = 0; i < tab2D.GetLength(0); i++)
+    {
+        for(int j = 0; j < tab2D.GetLength(1); j++)
+        {
+            tab2D[i,j] = rnd.Next(100);
+        }
+    }
+    //wyswietlanie tablicy
+     for(int i = 0; i < tab2D.GetLength(0); i++)
+    {
+        for(int j = 0; j < tab2D.GetLength(1); j++)
+        {
+            Console.Write(tab2D[i,j]+"\t");
+        }
+        Console.WriteLine();
+    }
+}
+Ex2();
