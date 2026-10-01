@@ -21,3 +21,8 @@
     Console.WriteLine();
 }
 Ex1();
+//Napisz funkcję która zwraca tablice o ustalonym w
+//argumencie rozmiarze zawierajacą liczby losowe
+// int[] GenerTab(int size){...}
+// napisz też funkcję wyświetlajaca tablice
+// void ShowTab(int[] tab){...}
