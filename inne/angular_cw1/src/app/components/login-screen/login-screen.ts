@@ -1,6 +1,6 @@
 import { Component, effect, signal } from '@angular/core';
 import { LOGIN_FORM_DEFAULT } from './login-screen.model';
-import { form, FormRoot, FormField } from '@angular/forms/signals';
+import { form, FormRoot, FormField, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-login-screen',
@@ -10,7 +10,11 @@ import { form, FormRoot, FormField } from '@angular/forms/signals';
 })
 export class LoginScreen {
   loginModel = signal({...LOGIN_FORM_DEFAULT})
-  form = form(this.loginModel)
+  form = form(this.loginModel,
+    (path)=>{
+      required(path.login,{message:"login jest niezbędny"})
+    }
+  )
 
   /**
    *
