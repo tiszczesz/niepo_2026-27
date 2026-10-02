@@ -29,5 +29,14 @@ namespace cw1_lists.Models
         {
             return notes;
         }
+
+        public int GetLastId()
+        {
+            return notes.Count > 0 ? notes.Select(n => n.Id).Max() : 0;
+        }
+        public void SaveNotes()
+        {
+            File.WriteAllText(filename, JsonSerializer.Serialize(notes));
+        }
     }
 }

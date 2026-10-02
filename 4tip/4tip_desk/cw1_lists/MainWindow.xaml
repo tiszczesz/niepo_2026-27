@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cw1_lists"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <ListBox x:Name="listBox1" Width="466" Height="300" Margin="10"/>
-            <StackPanel Orientation="Vertical" Margin="10">
-                <Button Content="Add Item" Width="100" Margin="5" Click="AddItem_Click"/>
-                <Button Content="Remove Item" Width="100" Margin="5" Click="RemoveItem_Click"/>
-                <Button Content="Clear Items" Width="100" Margin="5" Click="ClearItems_Click"/>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" x:Name="notesList" Width="Auto" Height="300" Margin="10"/>
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+                <Button Content="Dodaj do listy" Width="100" Margin="5" Click="Button_Click" />
+                <Button Content="Usuń z listy" Width="100" Margin="5" />
+                <Button Content="Wyczyść listę" Width="100" Margin="5" />
+                <Button Content="Zapisz do pliku" Width="100" Margin="5" Background="red" />
             </StackPanel>
-        </StackPanel>
+        </Grid>
     </StackPanel>
 </Window>
