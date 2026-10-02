@@ -15,9 +15,9 @@
             <ListBox Grid.Column="0" x:Name="notesList" Width="Auto" Height="300" Margin="10"/>
             <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
                 <Button Content="Dodaj do listy" Width="100" Margin="5" Click="Button_Click" />
-                <Button Content="Usuń z listy" Width="100" Margin="5" />
-                <Button Content="Wyczyść listę" Width="100" Margin="5" />
-                <Button Content="Zapisz do pliku" Width="100" Margin="5" Background="red" />
+                <Button Content="Usuń z listy" Width="100" Margin="5" Click="Button_Click_1" />
+                <Button Content="Wyczyść listę" Width="100" Margin="5" Click="Button_Click_2" />
+                <Button Content="Zapisz do pliku" Width="100" Margin="5" Background="red" Click="Button_Click_3" />
             </StackPanel>
         </Grid>
     </StackPanel>

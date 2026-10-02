@@ -18,13 +18,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Tytuł:" Margin="10" VerticalAlignment="Center"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="10" 
+        <TextBox x:Name="titleTextBox" Grid.Row="0" Grid.Column="1" Margin="10" 
                  FontSize="16" FontWeight="Bold"
                  HorizontalContentAlignment="Center"/>
         <Label Grid.Row="1" Grid.Column="0" Content="Treść:" Margin="10" VerticalAlignment="Center"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" AcceptsReturn="True" />
+        <TextBox x:Name="contentTextBox" Grid.Row="1" Grid.Column="1" Margin="10" AcceptsReturn="True" />
         <Label Grid.Row="2" Grid.Column="0" Content="Data:" Margin="10" VerticalAlignment="Center"/>
-        <DatePicker Grid.Row="2" Grid.Column="1" Margin="10" />
-        <Button Grid.Row="3" Grid.Column="1" Content="Dodaj notatkę" Margin="10" />
+        <DatePicker x:Name="dateDatePicker" Grid.Row="2" Grid.Column="1" Margin="10" />
+        <Button Grid.Row="3" Grid.Column="1" Content="Dodaj notatkę" Margin="10" Click="Button_Click"/>
     </Grid>
 </Window>

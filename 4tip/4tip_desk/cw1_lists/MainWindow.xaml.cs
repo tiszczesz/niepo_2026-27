@@ -18,7 +18,7 @@ namespace cw1_lists
     /// </summary>
     public partial class MainWindow : Window
     {
-        private NotesRepo notesRepo;
+        public NotesRepo notesRepo;
         public ObservableCollection<Note> Notes { get; set; }
         public MainWindow()
         {
@@ -35,7 +35,30 @@ namespace cw1_lists
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new AddNewWindow().ShowDialog();
+            new AddNewWindow(this).ShowDialog();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (notesList.SelectedIndex != -1)
+            {
+                Notes.RemoveAt(notesList.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano elementu do usunięcia.");
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Notes.Clear();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Zapisano do pliku.");
         }
     }
 }
