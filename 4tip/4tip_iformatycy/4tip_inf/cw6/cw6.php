@@ -63,6 +63,7 @@
         "pink" => "różowy",
         "brown" => "brązowy"
     ];
+    $kolory["grey"] = "szary"; // This line seems to be incorrect. It should be an assignment, not a comparison.
     var_dump($kolory);
     echo "<select>";
     foreach ($kolory as $ang => $pol) {
@@ -70,12 +71,12 @@
     }
     echo "</select>";
     ?>
-    <div style="width: 300px; height: 300px; border: solid 1px black;">ddd</div>
-    <h3>sadd sad sad sad as dsad asd</h3>
+    <div id="scene" style="width: 300px; height: 300px; border: solid 1px black;"></div>
 
 
 
 
+    <script src="cw6.js" defer></script>
 </body>
 
 </html>
