@@ -1,0 +1,36 @@
+<div class="flex min-h-screen items-center justify-center bg-gray-100 px-4">
+  <form class="w-full max-w-sm space-y-6 rounded-2xl bg-white p-8 shadow-lg">
+    <h1 class="text-center text-2xl font-bold text-gray-800">Logowanie</h1>
+
+    <div class="space-y-2">
+      <label for="login" class="block text-sm font-medium text-gray-700">Login</label>
+      <input
+        id="login"
+        name="login"
+        type="text"
+        autocomplete="username"
+        placeholder="Wpisz login"
+        class="w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40 focus:outline-none"
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="password" class="block text-sm font-medium text-gray-700">Has³o</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="Wpisz has³o"
+        class="w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40 focus:outline-none"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-500/50 focus:outline-none"
+    >
+      Zaloguj siê
+    </button>
+  </form>
+</div>

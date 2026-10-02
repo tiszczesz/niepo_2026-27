@@ -1,0 +1,4 @@
+/* Stylowanie realizowane przez Tailwind w szablonie */
+:host {
+  display: block;
+}
