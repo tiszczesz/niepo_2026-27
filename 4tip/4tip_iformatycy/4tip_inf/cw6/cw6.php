@@ -9,7 +9,7 @@
 
 <body>
 
-    <h1>Tablice w php</h1>
+    <h1>Tablice w php dsfdsfds fsd fds fsdfds fsd fsf </h1>
 
     <h3>Tablice indeksowane liczbami całkowitymi</h3>
     <?php
@@ -70,6 +70,12 @@
     }
     echo "</select>";
     ?>
+    <div style="width: 300px; height: 300px; border: solid 1px black;">ddd</div>
+    <h3>sadd sad sad sad as dsad asd</h3>
+
+
+
+
 </body>
 
 </html>
