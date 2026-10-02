@@ -1,7 +1,7 @@
 <?php
 function ShowNav() {
 echo <<<html
- <nav>
+ <nav class="navbar">
             <ul>
                 <li>
                     <a href="cw1.php">Główna</a>

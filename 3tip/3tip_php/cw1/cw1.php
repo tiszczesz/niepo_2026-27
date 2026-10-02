@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="cw1.css">
     <title>Kontakty</title>
 </head>
@@ -16,10 +17,14 @@
         ShowNav();
         ?>
     </header>
-    <main></main>
+    <main class="container">
+        <h1>Strona zarządzania kontaktami</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates delectus deleniti laborum facilis sint eos blanditiis. Praesentium expedita repellat quae, atque laudantium soluta, aliquam porro placeat, ipsum eius numquam error!</p>
+    </main>
     <?php
     ShowFooter();
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
