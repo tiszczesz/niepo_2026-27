@@ -1,0 +1,19 @@
+﻿<Window x:Class="cw1_lists.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cw1_lists"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <ListBox x:Name="listBox1" Width="466" Height="300" Margin="10"/>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Button Content="Add Item" Width="100" Margin="5" Click="AddItem_Click"/>
+                <Button Content="Remove Item" Width="100" Margin="5" Click="RemoveItem_Click"/>
+                <Button Content="Clear Items" Width="100" Margin="5" Click="ClearItems_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

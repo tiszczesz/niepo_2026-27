@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "Title": "Zakupy spożywcze",
+    "Content": "Kup mleko, chleb, jajka i jabłka. Sprawdzić promocje.",
+    "DateOf": "2026-10-01"
+  },
+  {
+    "Id": 2,
+    "Title": "Plan zajęć",
+    "Content": "Przygotować plan lekcji na nowy semestr i rozesłać do uczniów.",
+    "DateOf": "2026-09-15"
+  },
+  {
+    "Id": 3,
+    "Title": "Spotkanie zespołu",
+    "Content": "Omówić postępy projektu, przypisać zadania i ustalić termin kolejnego spotkania.",
+    "DateOf": "2026-08-20"
+  },
+  {
+    "Id": 4,
+    "Title": "Pomysł na aplikację",
+    "Content": "Notatka z pomysłami: tryb offline, synchronizacja, prosty UI, integracja z kalendarzem.",
+    "DateOf": "2026-07-05"
+  },
+  {
+    "Id": 5,
+    "Title": "Lista książek",
+    "Content": "1. 'Czysty kod' 2. 'Sztuka programowania' 3. 'Praktyczny przewodnik po WPF'",
+    "DateOf": "2026-06-11"
+  },
+  {
+    "Id": 6,
+    "Title": "Przypomnienie o opłatach",
+    "Content": "Opłacić rachunek za prąd i internet do 10. dnia miesiąca.",
+    "DateOf": "2026-05-30"
+  },
+  {
+    "Id": 7,
+    "Title": "Notatki z wykładu",
+    "Content": "Wprowadzenie do .NET 10: nowości, DateOnly/TimeOnly, optymalizacje kompilatora.",
+    "DateOf": "2026-04-22"
+  },
+  {
+    "Id": 8,
+    "Title": "Pomiar wydajności",
+    "Content": "Zmierzyć czas odpowiedzi API i przygotować raport porównawczy z poprzednim miesiącem.",
+    "DateOf": "2026-03-18"
+  },
+  {
+    "Id": 9,
+    "Title": "Urodziny",
+    "Content": "Kupić prezent dla Ani, zorganizować niespodziankę w pracy.",
+    "DateOf": "2026-02-02"
+  },
+  {
+    "Id": 10,
+    "Title": "Backup danych",
+    "Content": "Wykonać pełny backup serwera i sprawdzić integralność kopii.",
+    "DateOf": "2026-01-10"
+  }
+]
