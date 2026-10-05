@@ -16,6 +16,6 @@ export const contacts:Contact[] = [
     { id: 9, firstname: "Natalia", lastname: "Dąbrowska", phone: "509-012-345" },
     { id: 10, firstname: "Jakub", lastname: "Kozłowski", phone: "510-123-456" }
 ]
-export const getLastId = (contacts:Contact[]):number =>{
-    return contacts.length > 0 ? Math.max(...contacts.map(c => c.id)) : 0;
+export const getNextId = (contacts:Contact[]):number =>{
+    return contacts.length > 0 ? Math.max(...contacts.map(c => c.id)) + 1 : 1;
 }
