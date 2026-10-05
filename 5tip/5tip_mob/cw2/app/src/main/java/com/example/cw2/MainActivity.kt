@@ -12,6 +12,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private var isUpdateMode = false
+    private var indexToUpdate = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,10 +44,20 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             } else {
                 //dodanie do listy String
-                contacts.add(newContact)
+                if(isUpdateMode) {
+                    // aktualizacja istniejącego kontaktu
+                    contacts[indexToUpdate] = newContact
+                } else {
+                    // dodanie nowego kontaktu
+                    contacts.add(newContact)
+                }
+                isUpdateMode = false
+                indexToUpdate = -1
+                btnAdd.text = "Dodaj"
                 //wymuszenie przeładowania ListView
                 adapterList.notifyDataSetChanged()
                 editContact.text.clear()
+
             }
         }
         //usuwanie z listy na kliknięcie elemntu listy
@@ -58,9 +70,12 @@ class MainActivity : AppCompatActivity() {
             contacts.removeAt(id.toInt())
             adapterList.notifyDataSetChanged()
         }
-//        listContacts.setOnItemLongClickListener{
-//                parent, view, position, id ->
-//            //editContact.text.set = "fddfdfdfdf"
-//        }
+        listContacts.setOnItemLongClickListener { _, _, position, _ ->
+            editContact.setText(contacts[position])
+            btnAdd.text = "Zmień"
+            isUpdateMode = true
+            indexToUpdate = position
+            true
+        }
     }
 }
