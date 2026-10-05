@@ -1,0 +1,4 @@
+"Zakupy: chleb, mas³o, ser",
+"Do zrobienia: obiad, umyæ pod³ogi",
+"weekend: kino, spacer z psem",
+"Zapamiêtaæ: adres strony, godzinê wizyty, datê

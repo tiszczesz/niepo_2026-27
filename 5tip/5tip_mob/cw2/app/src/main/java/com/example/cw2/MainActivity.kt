@@ -58,5 +58,9 @@ class MainActivity : AppCompatActivity() {
             contacts.removeAt(id.toInt())
             adapterList.notifyDataSetChanged()
         }
+//        listContacts.setOnItemLongClickListener{
+//                parent, view, position, id ->
+//            //editContact.text.set = "fddfdfdfdf"
+//        }
     }
 }
