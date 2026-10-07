@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.Json;
 
@@ -7,9 +8,9 @@ namespace cw1_wpf.Models
 {
     public class ContactRepo
     {
-        public static List<Contact> GetContacts()
+        public static ObservableCollection<Contact> GetContacts()
         {
-            return new List<Contact>
+            return new ObservableCollection<Contact>()
             {
                 new Contact {  Firstname = "Jan", Lastname = "Kowalski", Phone = "123-456-789" },
                 new Contact {  Firstname = "Anna", Lastname = "Nowak", Phone = "987-654-321" },

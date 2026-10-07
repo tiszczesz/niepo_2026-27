@@ -20,6 +20,7 @@ namespace cw1_wpf
     public partial class ContactsWindow : Window
     {
         private ObservableCollection<Contact> contacts;
+        private List<Contact> contactList;
         public ContactsWindow()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace cw1_wpf
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            contacts = new ObservableCollection<Contact>(ContactRepo.GetContacts());
+            contacts = ContactRepo.GetContacts();
             LbContacts.ItemsSource = contacts;
             
         }
@@ -41,6 +42,8 @@ namespace cw1_wpf
                 Phone = "123456789"
             };
             contacts.Add(c1);
+            //Console.WriteLine("Dodano nowy kontakt.");
+            //Console.WriteLine(contactList);
         }
     }
 }
