@@ -1,1 +1,24 @@
-﻿<h2>Lista klas</h2>
+﻿@using cw1_vm.Models.ViewModels
+@model List<StudentDepartmentVM>
+<h2>Lista klas</h2>
+<table class="table table-striped">
+    <thead>
+        <th>Lp</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Odział klasowy</th>        
+    </thead>
+    <tbody>
+        @{int lp =0;}
+        @foreach(StudentDepartmentVM s in Model)
+        {
+            ++lp;
+            <tr>
+                <td>@lp</td>
+                <td>@s.Student?.Firstname</td>
+                <td>@s.Student?.Lastname</td>
+                <td>@s.Department?.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
