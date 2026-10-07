@@ -1,0 +1,5 @@
+ul.my-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 2;
+}

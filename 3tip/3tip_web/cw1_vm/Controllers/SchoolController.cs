@@ -17,6 +17,10 @@ namespace cw1_vm.Controllers
             List<StudentDepartmentVM> studentsWithDepartments = _schoolRepo.GetStudentsWithDepartments();
             return View(studentsWithDepartments);
         }
+        public IActionResult ListDepartments()
+        {
+            return View();
+        }
 
     }
 }
