@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="ContactsWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="295*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0">
             <StackPanel Orientation="Horizontal" Height="Auto">
                 <ListBox
                     x:Name="LbContacts"
@@ -19,5 +24,26 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+        <Grid Grid.Row="1">
+           <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="Auto"/>
+                             <ColumnDefinition Width="*"/>
+           </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Podaj imię:" Grid.Column="0" Grid.Row="0"
+                   Padding="10"
+                   HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
+            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
+            <Label Padding="10" Content="Podaj nazwisko:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
+            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
+            <Label Padding="10" Content="Podaj telefon:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
+            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"></TextBox>
+            <Button Grid.Row="3" Content="Anuluj" Height="30"></Button>
+        </Grid>
     </Grid>
 </Window>
