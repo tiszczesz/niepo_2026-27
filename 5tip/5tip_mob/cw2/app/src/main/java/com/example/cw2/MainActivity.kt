@@ -77,5 +77,6 @@ class MainActivity : AppCompatActivity() {
             indexToUpdate = position
             true
         }
+
     }
 }
