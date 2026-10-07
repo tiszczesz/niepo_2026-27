@@ -17,3 +17,19 @@ function getPlaces() : array {
     $conn->close();
     return $places;
 }
+function insertContact(array $contact) : void {
+    $sql = "INSERT INTO mycontacts (firstname,lastname,phone,place_id) "
+     . " VALUES('{$contact[0]}','{$contact[1]}','{$contact[2]}',{$contact[3]})";
+    // echo $sql;
+    $conn = getConnection();
+    $conn->query($sql);
+    $conn->close();
+}
+function getAllContacts() : array {
+    $conn = getConnection();
+   // $sql = "SELECT  FROM contacts as c INNER JOIN places as p  on p.id=c."
+   $contacts = [];
+
+
+   return  $contacts;
+}

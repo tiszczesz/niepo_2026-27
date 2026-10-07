@@ -17,7 +17,9 @@
         ShowNav();
         ?>
     </header>
-    <main class="container"></main>
+    <main class="container">
+        
+    </main>
     <?php
     ShowFooter();
     ?>
