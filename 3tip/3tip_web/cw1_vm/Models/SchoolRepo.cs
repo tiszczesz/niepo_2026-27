@@ -44,6 +44,21 @@ public class SchoolRepo
         }
         return students;
     }
+    public List<DepartmentsStudent> GetDepartmentStudent()
+    {
+        using var connection = new MySqlConnection(_connectionString);
+        using var command = connection.CreateCommand();
+        connection.Open();
+        List<DepartmentsStudent> deps = new List<DepartmentsStudent>();
+        //wypełnianie listy
+       command.CommandText = @"
+            SELECT d.id, d.name, d.description, COUNT(s.id) AS StudentCount
+            FROM Departments d
+            LEFT JOIN Students s ON d.id = s.department_id
+            GROUP BY d.id, d.name, d.description;";
+
+        return deps;
+    }
 
 }
 

@@ -1,5 +1,9 @@
 ul.my-nav{
     display: flex;
-    flex-direction: row;
-    gap: 2;
+    /* flex-direction: row; */
+    gap: 20px;
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
 }
