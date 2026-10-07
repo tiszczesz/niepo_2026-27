@@ -45,5 +45,18 @@ namespace cw1_wpf
             //Console.WriteLine("Dodano nowy kontakt.");
             //Console.WriteLine(contactList);
         }
+
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            //rzutowanie wybranego elementu z listy na obiekt Contact 
+            //sprawdzenie czy wybrany element nie jest nullem
+            //usuniecie kontaktu z listy ObservableCollection<Contact> contacts
+            if (LbContacts.SelectedItem is Contact selectedContact)
+            {
+                contacts.Remove(selectedContact);
+                //Console.WriteLine("Usunięto kontakt.");
+            }
+
+        }
     }
 }

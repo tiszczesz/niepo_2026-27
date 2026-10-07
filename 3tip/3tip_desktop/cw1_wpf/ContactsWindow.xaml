@@ -15,6 +15,7 @@
                 <StackPanel Orientation="Vertical">
                     <Button Content="Dodaj" Width="200" Click="Button_Click"/>
                     <Button Content="Edytuj" Width="200"/>
+                    <Button Content="Usuń" Width="200" Click="Button_Delete_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
