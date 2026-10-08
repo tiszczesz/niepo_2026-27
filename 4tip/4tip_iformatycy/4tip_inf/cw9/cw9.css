@@ -1,0 +1,23 @@
+.row{
+    margin: 20px;
+}
+.row label{
+    display: inline-block;
+    text-align: end;
+    width: 150px;
+    padding-right: 5px;
+}
+.row input[type=text]{
+    width: 150px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px grey solid;
+}
+.row input[type=submit]{
+    width: 150px;
+    padding: 5px;
+    margin-left: 165px;
+}
+.row select{    
+    width: 150px;
+}
