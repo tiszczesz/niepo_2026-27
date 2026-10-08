@@ -1,5 +1,3 @@
-Poniżej gotowa treść pliku `programowanie_dynamiczne.md`:
-
 Programowanie dynamiczne
 
 # Programowanie dynamiczne
@@ -168,11 +166,11 @@ Każdy przedmiot możemy wybrać maksymalnie raz.
 Mamy przedmioty:
 
 | Przedmiot | Waga | Wartość |
-| --- | --- | --- |
-| 1 | 2 | 3 |
-| 2 | 3 | 4 |
-| 3 | 4 | 5 |
-| 4 | 5 | 6 |
+| --------- | ---- | ------- |
+| 1         | 2    | 3       |
+| 2         | 3    | 4       |
+| 3         | 4    | 5       |
+| 4         | 5    | 6       |
 
 Pojemność plecaka wynosi `5`.
 
@@ -507,5 +505,3 @@ Najczęściej spotykane zastosowania to między innymi:
 Najważniejsza idea, którą warto zapamiętać, brzmi:
 
 > **Jeżeli te same podproblemy pojawiają się wielokrotnie, zamiast rozwiązywać je ponownie, zapisz ich wyniki i wykorzystaj je później.**
-
-Jeśli chcesz, mogę też przygotować **krótszą wersję typowo „do szkoły”, na 1–2 strony**, albo wersję z **zadaniami i rozwiązaniami w C++**.
