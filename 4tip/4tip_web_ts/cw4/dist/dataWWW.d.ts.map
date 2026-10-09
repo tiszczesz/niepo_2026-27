@@ -1,1 +1,1 @@
-{"version":3,"file":"dataWWW.d.ts","sourceRoot":"","sources":["../src/dataWWW.ts"],"names":[],"mappings":"AAAA,wBAAgB,UAAU,IAAG,gBAAgB,CAK5C;AACD,eAAO,MAAM,WAAW,YAAY,MAAM,SAGzC,CAAA;AACD,wBAAgB,SAAS,CAAC,IAAI,EAAE,IAAI,GAAG,IAAI,EAAC,KAAK,EAAC,MAAM,GAChD,gBAAgB,GAAG,gBAAgB,CAS1C"}
+{"version":3,"file":"dataWWW.d.ts","sourceRoot":"","sources":["../src/dataWWW.ts"],"names":[],"mappings":"AAAA,wBAAgB,UAAU,IAAG,gBAAgB,CAK5C;AACD,eAAO,MAAM,WAAW,YAAY,MAAM,KAAG,iBAI5C,CAAA;AACD,wBAAgB,SAAS,CAAC,IAAI,EAAE,IAAI,GAAG,IAAI,EAAC,KAAK,EAAC,MAAM,GAChD,gBAAgB,GAAG,gBAAgB,CAS1C"}
