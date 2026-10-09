@@ -21,12 +21,18 @@ function getLastId(data){
 }
 function FillTodos(id, data){
     const elem = document.querySelector("#"+id);
-    let html = "<ol>";
+    let html = "<ol id='todoList'>";
     for(const todo of data){
-        html += `<li>${todo.content} <button>x</button></li>\n`;
+        html += `<li>${todo.content} <button id='${todo.id}'>x</button></li>\n`;
     }
     html += "</ol>"
     elem.innerHTML = html ;
+    //elem.id = "todoList";
+    const allLi = document.querySelectorAll("#todoList li");
+    for(const button of allLi){
+        //ustawic na przycisku click
+    }
+    console.log(allLi);
 }
 FillTodos("result",todos);
 document.querySelector("#todo").addEventListener("input",(event)=>{
@@ -45,3 +51,5 @@ document.querySelector("#btnAdd").addEventListener("click",()=>{
     todoInput.value = "";
     console.log(todos);
 });
+//usuniecie z array
+//update listy na stronie FillTodos("result",todos);
