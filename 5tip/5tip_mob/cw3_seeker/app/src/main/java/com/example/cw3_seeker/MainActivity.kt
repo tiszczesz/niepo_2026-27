@@ -3,6 +3,9 @@ package com.example.cw3_seeker
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CheckBox
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.TextView
@@ -26,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         val tvSeekbar = findViewById<TextView>(R.id.tVSeekbar)
         val spinner = findViewById<Spinner>(R.id.spinner)
         val tvSpinner = findViewById<TextView>(R.id.tVSpinner)
+        val radio1 = findViewById<RadioButton>(R.id.radioButton1)
+        val radio2 = findViewById<RadioButton>(R.id.radioButton2)
+        val radio3 = findViewById<RadioButton>(R.id.radioButton3)
+        val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(
                 seekBar: SeekBar?,
@@ -49,6 +56,21 @@ class MainActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this,
             android.R.layout.simple_spinner_item, data)
         spinner.adapter = adapter
+        val checkBox1 = findViewById<CheckBox>(R.id.checkBox1)
+        val checkBox2 = findViewById<CheckBox>(R.id.checkBox2)
+        val updateChackBoxStatuse = {
+            val status1 = if (checkBox1.isChecked) "Zaznaczony" else "Odznaczony"
+            val status2 = if (checkBox2.isChecked) "Zaznaczony" else "Odznaczony"
+            Toast.makeText(this, "CheckBox 1: $status1\nCheckBox 2: $status2", Toast.LENGTH_SHORT).show()
+        }
+        checkBox1.setOnCheckedChangeListener { _, _ -> updateChackBoxStatuse() }
+        checkBox2.setOnCheckedChangeListener { _, _ -> updateChackBoxStatuse() }
+        radioGroup.setOnClickListener {
+            val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+            val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
+            val selectedValue = selectedRadioButton.text.toString()
+            Toast.makeText(this, "Wybrana wartość: $selectedValue", Toast.LENGTH_SHORT).show()
+        }
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
