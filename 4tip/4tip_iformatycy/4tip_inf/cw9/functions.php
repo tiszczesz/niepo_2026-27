@@ -31,8 +31,8 @@ function getHobby(): string
     ];
     $html = "";
     foreach ($hobbies as $h) {
-        $html .= "<label>{$h}</label>\n";
-        $html .= "<input type='checkbox' name='hobbies[]' value='{$h}'><br>\n";
+        $html .= "<label for='{$h}'>{$h}</label>\n";
+        $html .= "<input type='checkbox' id='{$h}' name='hobbies[]' value='{$h}'><br>\n";
     }
     return $html;
 }

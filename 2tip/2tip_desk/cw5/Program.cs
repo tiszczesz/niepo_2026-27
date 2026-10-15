@@ -68,4 +68,33 @@ void Ex2()
         Console.WriteLine();
     }
 }
-Ex2();
+
+//Ex2();
+int[,] Zad1(int size)
+{
+    int[,] numbers = new int[size,size];
+    for(int i=0; i < size; i++)
+    {
+        for(int j = 0; j < size; j++)
+        {
+            numbers[i,j] = (i+1)*(j+1);
+        }
+    }
+    return numbers;
+}
+void saveToFile(int[,] data)
+{
+    int size = data.GetLength(0);
+    string[] lines = new string[size];
+    for(int i = 0; i < data.GetLength(0); i++)
+    {
+        string line = "";
+        for(int j = 0; j < data.GetLength(1); j++)
+        {
+            lines[i] += data[i,j]+"\t";
+        }
+    }
+    File.WriteAllLines("liczby.txt",lines);
+}
+var numbers = Zad1(10);
+saveToFile(numbers);
