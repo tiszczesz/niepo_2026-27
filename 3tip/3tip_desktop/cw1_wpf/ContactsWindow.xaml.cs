@@ -58,5 +58,10 @@ namespace cw1_wpf
             }
 
         }
+
+        private void Close_button(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
