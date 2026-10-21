@@ -25,27 +25,28 @@
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="1">
-           <Grid.ColumnDefinitions>
-                             <ColumnDefinition Width="Auto"/>
-                             <ColumnDefinition Width="*"/>
-           </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" MinHeight="96"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="Podaj imię:" Grid.Column="0" Grid.Row="0"
+            <Label Content="Podaj imię:" Grid.Column="0"
                    Padding="10"
-                   HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="41" Margin="34,0,0,0" Width="97"/>
             <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
-            <Label Padding="10" Content="Podaj nazwisko:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
-            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
-            <Label Padding="10" Content="Podaj telefon:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"></Label>
-            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"></TextBox>
-            <Button Grid.Row="3" Content="Anuluj" Height="30" Margin="0,73,0,103"></Button>
-            <Button Grid.Row="3" Content="Zatwierdź" Height="30" Margin="0,21,0,155"/>
-            <Button Grid.Row="3" Content="Zamknij" Height="30" Margin="0,133,0,43" Click="Close_button"/>
+            <Label Padding="10" Content="Podaj nazwisko:" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Height="42" Width="131"/>
+            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="0,0,0,51" Grid.RowSpan="2"></TextBox>
+            <Label Padding="10" Content="Podaj telefon:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="42" Margin="15,0,0,0" Width="116"></Label>
+            <TextBox VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,0,0,18"></TextBox>
+            <
+            <Button Grid.Row="3" Content="Anuluj" Margin="0,73,0,78"/>
+            <Button Grid.Row="3" Content="Zatwierdź" Margin="0,21,0,130"/>
+            <Button Grid.Row="3" Content="Zamknij" Margin="0,133,0,18" Click="Close_button"/>
         </Grid>
     </Grid>
 </Window>
