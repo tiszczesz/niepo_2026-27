@@ -19,7 +19,10 @@ namespace cw1_vm.Controllers
         }
         public IActionResult ListDepartments()
         {
-            return View();
+            //dane z modelu
+            var departmentsWithCount = _schoolRepo.GetDepartmentStudent();
+            //wysłanie do widoku
+            return View(departmentsWithCount);
         }
 
     }

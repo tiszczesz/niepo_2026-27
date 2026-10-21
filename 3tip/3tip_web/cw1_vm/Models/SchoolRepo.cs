@@ -54,9 +54,24 @@ public class SchoolRepo
        command.CommandText = @"
             SELECT d.id, d.name, d.description, COUNT(s.id) AS StudentCount
             FROM Departments d
-            LEFT JOIN Students s ON d.id = s.department_id
+            JOIN Students s ON d.id = s.department_id
             GROUP BY d.id, d.name, d.description;";
-
+        using MySqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            deps.Add(
+                new DepartmentsStudent
+                {
+                    ActuallDepartment = new Department
+                    {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Description = reader.GetString(2)                        
+                    },
+                    StudentCount = reader.GetInt32(3)
+                }
+            );
+        }
         return deps;
     }
 
