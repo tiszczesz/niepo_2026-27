@@ -61,22 +61,29 @@ function App() {
         </div>
       </div>
       <section className="d-flex gap-3 flex-wrap">
-        {imagesList.map((elem) => (
-          <div key={elem.id}>
-            <img
-              style={{ margin: "5px", borderRadius: "5px" }}
-              src={`assets/${elem.filename}`}
-              alt=""
-            />
-            <h4>Pobrań: {elem.downloads}</h4>
-            <button
-              onClick={() => handleClick(elem.id)}
-              className="btn btn-success"
-            >
-              Pobierz
-            </button>
-          </div>
-        ))}
+        {imagesList.map(
+          (elem) =>
+            (
+              (flowers && elem.category === 1) ||
+              (animals && elem.category === 2) ||
+              (cars && elem.category) === 3
+            ) && (
+              <div key={elem.id}>
+                <img
+                  style={{ margin: "5px", borderRadius: "5px" }}
+                  src={`assets/${elem.filename}`}
+                  alt=""
+                />
+                <h4>Pobrań: {elem.downloads}</h4>
+                <button
+                  onClick={() => handleClick(elem.id)}
+                  className="btn btn-success"
+                >
+                  Pobierz
+                </button>
+              </div>
+            ),
+        )}
       </section>
     </>
   );
