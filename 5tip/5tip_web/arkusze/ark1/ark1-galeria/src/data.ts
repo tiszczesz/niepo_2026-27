@@ -1,4 +1,4 @@
-export const images = [
+export const images:Image[] = [
      {id: 0, alt: "Mak", filename: "obraz1.jpg", category:1, downloads: 35},
     {id: 1, alt:"Bukiet", filename: "obraz2.jpg", category: 1, downloads: 43},
     {id: 2, alt:"Dalmatyńczyk", filename: "obraz3.jpg", category:2, downloads: 2},

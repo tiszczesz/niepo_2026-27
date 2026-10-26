@@ -12,8 +12,11 @@ function App() {
   const [flowers, setFlowers] = useState(true);
   const [animals, setAnimals] = useState(true);
   const [cars, setCars] = useState(true);
+  console.log(imagesList);
   function handleClick(id: number): void {
-    throw new Error("Function not implemented.");
+    const elem = imagesList.filter((elem) => elem.id === id);
+    elem[0].downloads++;
+    setImagesList([...imagesList]);
   }
 
   return (
@@ -22,7 +25,7 @@ function App() {
       <div className="d-flex gap-4">
         <div className="form-check form-switch">
           <input
-            onClick={() => setFlowers(!flowers)}
+            onChange={() => setFlowers(!flowers)}
             checked={flowers}
             className="form-check-input"
             type="checkbox"
@@ -34,7 +37,7 @@ function App() {
         </div>
         <div className="form-check form-switch">
           <input
-            onClick={() => setAnimals(!animals)}
+            onChange={() => setAnimals(!animals)}
             checked={animals}
             className="form-check-input"
             type="checkbox"
@@ -46,7 +49,7 @@ function App() {
         </div>
         <div className="form-check form-switch">
           <input
-            onClick={() => setCars(!cars)}
+            onChange={() => setCars(!cars)}
             checked={cars}
             className="form-check-input"
             type="checkbox"
@@ -59,16 +62,19 @@ function App() {
       </div>
       <section className="d-flex gap-3 flex-wrap">
         {imagesList.map((elem) => (
-          <div>
+          <div key={elem.id}>
             <img
-              style={{ margin: "5px", borderRadius: "5px"}}
+              style={{ margin: "5px", borderRadius: "5px" }}
               src={`assets/${elem.filename}`}
               alt=""
             />
             <h4>Pobrań: {elem.downloads}</h4>
             <button
-            onClick={()=>handleClick(elem.id)}
-             className="btn btn-success">Pobierz</button>
+              onClick={() => handleClick(elem.id)}
+              className="btn btn-success"
+            >
+              Pobierz
+            </button>
           </div>
         ))}
       </section>
