@@ -14,10 +14,18 @@ const FormSubmit = ({title}: Props) => {
         //reszta identycznie jak z action
     }
 
+    function handleClick(event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+       console.log(event);
+       event.preventDefault()
+       
+    }
+
   return (
     <>
      <h2>Tytuł formularza: {title}</h2>
-      <form onSubmit={(event)=>handmeSubmit(event)}>
+      <form 
+    //   onSubmit={(event)=>handmeSubmit(event)}
+      >
         <input type="text" name="firstname" placeholder="Podaj imię" /> <br />
         <input type="text" name="lastname" placeholder="Podaj nazwisko" />{" "}
         <br />
@@ -28,6 +36,7 @@ const FormSubmit = ({title}: Props) => {
         />{" "}
         <br />
         <input
+         onClick={(event)=>handleClick(event)}
           type="submit"
           value="Zapisz"
           className="btn btn-outline-primary"
