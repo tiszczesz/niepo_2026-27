@@ -36,5 +36,9 @@ namespace cw1_vm.Controllers
         {
             return View();
         }
+        private List<Department> GetDepartments()
+        {
+            
+        }
     }
 }

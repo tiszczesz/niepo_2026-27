@@ -74,6 +74,28 @@ public class SchoolRepo
         }
         return deps;
     }
+    public List<Department> GetDepartments()
+    {
+        List<Department> deps = new();
+        using MySqlConnection conn = new MySqlConnection(_connectionString);
+        using MySqlCommand command = conn.CreateCommand();
+        command.CommandText = "SELECT id,name,description FROM departments";
+        conn.Open();
+        using MySqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            deps.Add(
+                new Department
+                {
+                  Id = reader.GetInt32("id"),
+                  Name = reader.GetString("name"),
+                  Description = reader.GetString("description")  
+                }
+            );
+        }
+        conn.Close();
+        return deps;
+    }
 
 }
 
