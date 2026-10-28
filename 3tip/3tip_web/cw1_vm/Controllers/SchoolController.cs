@@ -24,6 +24,17 @@ namespace cw1_vm.Controllers
             //wysłanie do widoku
             return View(departmentsWithCount);
         }
-
+        //do pustego formularza
+        [HttpGet]
+        public IActionResult AddStudent()
+        {
+            return View();
+        }
+        //wykonanie zapytania do bazy po nacisnięciu submit
+        [HttpPost]
+        public IActionResult AddStudent(Student student)
+        {
+            return View();
+        }
     }
 }
