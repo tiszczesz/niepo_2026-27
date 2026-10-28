@@ -6,7 +6,8 @@
         <th>Lp</th>
         <th>Imię</th>
         <th>Nazwisko</th>
-        <th>Odział klasowy</th>        
+        <th>Odział klasowy</th>      
+        <th> ------ </th>  
     </thead>
     <tbody>
         @{int lp =0;}
@@ -18,6 +19,10 @@
                 <td>@s.Student?.Firstname</td>
                 <td>@s.Student?.Lastname</td>
                 <td>@s.Department?.Name</td>
+                <td>
+                    <a class="btn btn-outline-danger"
+                    asp-action="Delete" asp-route-id="@s.Student?.Id">USUŃ</a>
+                </td>
             </tr>
         }
     </tbody>

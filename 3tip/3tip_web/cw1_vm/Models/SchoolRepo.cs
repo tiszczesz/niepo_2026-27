@@ -10,7 +10,7 @@ public class SchoolRepo
     public SchoolRepo(IConfiguration configuration)
     {
         _connectionString = configuration.GetConnectionString("mysql")
-        ??"server=localhost;database=3tip_2026_school;user=root;password=;";
+        ?? "server=localhost;database=3tip_2026_school;user=root;password=;";
     }
     public List<StudentDepartmentVM> GetStudentsWithDepartments()
     {
@@ -51,7 +51,7 @@ public class SchoolRepo
         connection.Open();
         List<DepartmentsStudent> deps = new List<DepartmentsStudent>();
         //wypełnianie listy
-       command.CommandText = @"
+        command.CommandText = @"
             SELECT d.id, d.name, d.description, COUNT(s.id) AS StudentCount
             FROM Departments d
             JOIN Students s ON d.id = s.department_id
@@ -66,7 +66,7 @@ public class SchoolRepo
                     {
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        Description = reader.GetString(2)                        
+                        Description = reader.GetString(2)
                     },
                     StudentCount = reader.GetInt32(3)
                 }
@@ -87,9 +87,9 @@ public class SchoolRepo
             deps.Add(
                 new Department
                 {
-                  Id = reader.GetInt32("id"),
-                  Name = reader.GetString("name"),
-                  Description = reader.GetString("description")  
+                    Id = reader.GetInt32("id"),
+                    Name = reader.GetString("name"),
+                    Description = reader.GetString("description")
                 }
             );
         }
@@ -100,9 +100,20 @@ public class SchoolRepo
     public void AddStudent(Student student)
     {
         //insert do Mysql
+        using MySqlConnection conn = new MySqlConnection(_connectionString);
+        using MySqlCommand command = conn.CreateCommand();
+        conn.Open();
+        command.CommandText =
+            $"INSERT INTO students(firstname,lastname,department_id) "
+            + $"VALUES(@firstname,@lastname,@department_id)";
+        command.Parameters.AddWithValue("@firstname", student.Firstname);
+        command.Parameters.AddWithValue("@lastname", student.Lastname);
+        command.Parameters.AddWithValue("@department_id", student.DepartmentId);
+        command.ExecuteNonQuery();
+        conn.Close();
     }
 }
 
-  
+
 
 
