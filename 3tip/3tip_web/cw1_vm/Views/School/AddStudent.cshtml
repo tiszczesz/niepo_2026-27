@@ -7,6 +7,19 @@
 <h2>Dodawanie nowego studenta</h2>
 <form asp-action="AddStudent" method="post">
     <div class="row m-2">
-        <label asp-for="Firstname"></label>
+        <label class="col-3 text-end" asp-for="Firstname"></label>
+        <input class="col-6" type="text" asp-for="Firstname">
+        <span class="text-denger" asp-validation-for="Firstname"></span>
+    </div>
+     <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Lastname"></label>
+        <input class="col-6" type="text" asp-for="Lastname">
+        <span class="text-denger" asp-validation-for="Lastname"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end">Wybierz klasę</label>
+        <select class="col-6">
+
+        </select>
     </div>
 </form>
