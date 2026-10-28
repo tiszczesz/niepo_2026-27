@@ -28,17 +28,25 @@ namespace cw1_vm.Controllers
         [HttpGet]
         public IActionResult AddStudent()
         {
+            ViewBag.deps = GetDepartments();
             return View();
         }
         //wykonanie zapytania do bazy po nacisnięciu submit
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
+            ViewBag.deps = GetDepartments();
+            if (ModelState.IsValid)
+            {
+                _schoolRepo.AddStudent(student);
+                return RedirectToAction(nameof(List));
+            }
             return View();
         }
         private List<Department> GetDepartments()
         {
-            
+            var deps = _schoolRepo.GetDepartments();
+            return deps;
         }
     }
 }

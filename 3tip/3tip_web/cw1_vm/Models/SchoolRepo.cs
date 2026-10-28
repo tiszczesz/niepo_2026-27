@@ -97,6 +97,10 @@ public class SchoolRepo
         return deps;
     }
 
+    public void AddStudent(Student student)
+    {
+        //insert do Mysql
+    }
 }
 
   

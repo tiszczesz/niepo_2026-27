@@ -19,7 +19,13 @@
     <div class="row m-2">
         <label class="col-3 text-end">Wybierz klasę</label>
         <select class="col-6" asp-for="DepartmentId">
-
+            @foreach(Department dep in ViewBag.deps)
+                    {
+                        <option value=@dep.Id>@dep.Name</option>
+                    }
         </select>
+    </div>
+    <div class="row m-2">
+        <button class="btn btn-outline-primary col-6 offset-3">Zatwierdź</button>
     </div>
 </form>
