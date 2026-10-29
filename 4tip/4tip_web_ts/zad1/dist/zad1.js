@@ -13,6 +13,7 @@ function showHeaderH1() {
 }
 function showTab(data) {
     const tab = document.createElement("table");
+    let lp = 0;
     tab.classList.add("table", "table-striped");
     const theaad = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -23,6 +24,19 @@ function showTab(data) {
                     <th>Rok</th>`;
     theaad.appendChild(tr);
     tab.appendChild(theaad);
+    const tbody = document.createElement("tbody");
+    for (const elem of data) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${++lp}</td>
+                    <td>${elem.title}</td>
+                    <td>${elem.director}</td>
+                    <td>${elem.genre}</td>
+                    <td>${elem.year}</td>
+                    `;
+        tbody.appendChild(tr);
+    }
+    tab.appendChild(tbody);
+    //todo
     return tab;
 }
 //# sourceMappingURL=zad1.js.map
