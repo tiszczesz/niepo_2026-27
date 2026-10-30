@@ -17,8 +17,50 @@
         ShowNav();
         ?>
     </header>
-    <main class="container">
-        
+    <main class="container d-flex gap-4">
+        <section>
+            <h1>Lista kontaktów</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Lp</th>
+                        <th>Imię</th>
+                        <th>Nazwisko</th>
+                        <th>Telefon</th>
+                        <th>Miejsce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require_once "functions.php";
+                    $result = getAllContacts();
+                    $lp = 0;
+                    foreach ($result as $c) {
+                        $lp++;
+                        echo "<tr>\n";
+                        echo "\t<td>{$lp}</td>\n";
+                        echo "\t<td>{$c['firstname']}</td>\n";
+                        echo "\t<td>{$c['lastname']}</td>\n";
+                        echo "\t<td>{$c['phone']}</td>\n";
+                        echo "\t<td><a href='list.php?id={$c['place_id']}'>{$c['name']}</a></td>\n";
+                        echo "</tr>\n";
+                    }
+                    ?>
+                </tbody>
+
+
+
+            </table>
+        </section>
+        <section class="mt-5">
+            <?php
+            if (isset($_GET['id'])) {
+                $id = intval($_GET['id']);
+                echo "<div>".getDescriptionById($id)."</div>";
+            }
+            ?>
+
+        </section>
     </main>
     <?php
     ShowFooter();

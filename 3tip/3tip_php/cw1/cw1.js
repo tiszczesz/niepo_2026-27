@@ -31,6 +31,7 @@ function FillTodos(id, data){
     const allLi = document.querySelectorAll("#todoList li");
     for(const button of allLi){
         //ustawic na przycisku click
+        //mozna uzyć funkcji array.filter()
     }
     console.log(allLi);
 }
