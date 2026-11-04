@@ -1,0 +1,10 @@
+The Witcher 3|RPG|129.99|2015
+Minecraft|Sandbox|99.99|2011
+Cyberpunk 2077|RPG|199.99|2020
+FIFA 23|Sportowa|249.99|2022
+Stardew Valley|Symulacja|54.99|2016
+Portal 2|Logiczna|39.99|2011
+Grand Theft Auto V|Akcja|119.99|2013
+Forza Horizon 5|Wyścigowa|219.99|2021
+The Sims 4|Symulacja|0.00|2014
+Hades|Roguelike|99.99|2020
