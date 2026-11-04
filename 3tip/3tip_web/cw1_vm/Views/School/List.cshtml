@@ -22,6 +22,8 @@
                 <td>
                     <a class="btn btn-outline-danger"
                     asp-action="Delete" asp-route-id="@s.Student?.Id">USUŃ</a>
+                    <a class="btn btn-outline-secondary"
+                    asp-action="EditStudent" asp-route-id="@s.Student?.Id">EDYTUJ</a>
                 </td>
             </tr>
         }

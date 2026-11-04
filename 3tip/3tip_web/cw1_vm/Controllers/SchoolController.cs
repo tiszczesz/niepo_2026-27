@@ -43,13 +43,13 @@ namespace cw1_vm.Controllers
             }
             return View();
         }
-        
+
         [HttpGet]
         public IActionResult AddDeprtment()
         {
             return View();
         }
-           [HttpPost]
+        [HttpPost]
         public IActionResult AddDeprtment(Department department)
         {
             if (ModelState.IsValid)
@@ -57,6 +57,17 @@ namespace cw1_vm.Controllers
                 //todo
                 return RedirectToAction(nameof(ListDepartments));
             }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult EditStudent()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult EditStudent(Student student)
+        {
             return View();
         }
         private List<Department> GetDepartments()

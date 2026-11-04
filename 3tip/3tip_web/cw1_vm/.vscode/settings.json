@@ -1,3 +1,8 @@
 {
-    "specstory.cloudSync.enabled": "never"
+  "specstory.cloudSync.enabled": "never",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
