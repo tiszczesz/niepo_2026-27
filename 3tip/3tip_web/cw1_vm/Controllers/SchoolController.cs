@@ -43,6 +43,22 @@ namespace cw1_vm.Controllers
             }
             return View();
         }
+        
+        [HttpGet]
+        public IActionResult AddDeprtment()
+        {
+            return View();
+        }
+           [HttpPost]
+        public IActionResult AddDeprtment(Department department)
+        {
+            if (ModelState.IsValid)
+            {
+                //todo
+                return RedirectToAction(nameof(ListDepartments));
+            }
+            return View();
+        }
         private List<Department> GetDepartments()
         {
             var deps = _schoolRepo.GetDepartments();
