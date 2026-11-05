@@ -13,6 +13,7 @@ public class PersonsRepo
 {
     public static List<Person> GetPersons()
     {
+        File.ReadAllLines("nazwaPliku");
         return new List<Person>
         {
             new Person{Firstname="Alan",Lastname="Romańsik",Age=17},
