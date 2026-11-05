@@ -107,14 +107,40 @@ koszt = wybranaStrategia.obliczKoszt(zamowienie)
 
 **Zastosowanie:** zamówienie, które może być nowe, opłacone, wysłane lub anulowane. Wzorzec pomaga jasno określić dozwolone działania i przejścia między stanami.
 
+#### Metoda szablonowa (Template Method)
+
+**Problem:** kilka klas wykonuje ten sam proces składający się z ustalonych kroków, ale niektóre kroki różnią się zależnie od klasy. Powielanie całego procesu utrudnia późniejsze zmiany i może prowadzić do niespójnego działania.
+
+**Rozwiązanie:** klasa bazowa definiuje szkielet algorytmu w metodzie szablonowej, ustalając kolejność kroków. Wybrane kroki udostępnia jako metody, które klasy pochodne implementują lub nadpisują. Sam szkielet pozostaje wspólny, więc klasy pochodne nie zmieniają kolejności całego procesu.
+
+**Zastosowanie:** generowanie raportów w różnych formatach — wspólna procedura pobiera dane, przygotowuje je, zapisuje wynik i sprząta zasoby, a podklasy dostarczają formatowanie właściwe dla CSV lub HTML.
+
+```text
+klasa GeneratorRaportu:
+    metoda szablonowa generuj():
+        dane = pobierzDane()
+        tresc = sformatuj(dane)
+        zapisz(tresc)
+
+    abstrakcyjna metoda sformatuj(dane)
+
+klasa GeneratorCSV dziedziczy po GeneratorRaportu:
+    metoda sformatuj(dane) -> tekst CSV
+
+klasa GeneratorHTML dziedziczy po GeneratorRaportu:
+    metoda sformatuj(dane) -> dokument HTML
+```
+
+Metodę szablonową wybieraj, gdy kolejność procesu jest stała, a różnią się jego poszczególne kroki. W odróżnieniu od **Strategii**, która przekazuje wymienny algorytm przez kompozycję, metoda szablonowa opiera warianty na dziedziczeniu. Dziedziczenie może ograniczać elastyczność, dlatego przy zmiennym zestawie zachowań strategia bywa lepszym wyborem.
+
 ## Jak wybrać wzorzec?
 
 - Gdy problem dotyczy **tworzenia obiektów**, rozważ wzorzec kreacyjny, np. fabrykę lub budowniczego.
 - Gdy trzeba **dopasować interfejs albo uprościć współpracę komponentów**, rozważ adapter lub fasadę.
-- Gdy problem dotyczy **zmiennego zachowania i komunikacji**, rozważ strategię, obserwatora lub stan.
+- Gdy problem dotyczy **zmiennego zachowania i komunikacji**, rozważ strategię, obserwatora, stan lub metodę szablonową.
 - Wybieraj rozwiązanie proporcjonalne do problemu. Jeśli prosty warunek lub funkcja są czytelne i łatwe w zmianie, dodatkowy wzorzec nie jest konieczny.
 - Sprawdź, czy wzorzec ogranicza zależności i ułatwia testowanie, zamiast tylko przenosić złożoność w inne miejsce.
 
 ## Podsumowanie
 
-Wzorce projektowe dostarczają wspólnego języka do opisywania typowych rozwiązań. Fabryka, budowniczy i singleton dotyczą tworzenia; adapter, dekorator i fasada — struktury; strategia, obserwator i stan — zachowania. Najważniejsze jest rozpoznanie problemu i dobranie najprostszego rozwiązania, które pozostaje czytelne i łatwe w utrzymaniu.
+Wzorce projektowe dostarczają wspólnego języka do opisywania typowych rozwiązań. Fabryka, budowniczy i singleton dotyczą tworzenia; adapter, dekorator i fasada — struktury; strategia, obserwator, stan i metoda szablonowa — zachowań. Najważniejsze jest rozpoznanie problemu i dobranie najprostszego rozwiązania, które pozostaje czytelne i łatwe w utrzymaniu.
