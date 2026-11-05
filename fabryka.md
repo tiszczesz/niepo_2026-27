@@ -15,12 +15,16 @@ Poniższy program pyta o rodzaj powiadomienia, tworzy odpowiednią fabrykę i wy
 #include <memory>
 #include <string>
 
+// Wspólny interfejs, dzięki któremu klient nie zależy od konkretnego kanału.
 class Powiadomienie {
 public:
+    // Wirtualny destruktor pozwala bezpiecznie usuwać obiekty klas pochodnych.
     virtual ~Powiadomienie() = default;
+    // Metoda czysto wirtualna wymusza implementację wysyłania w każdej klasie pochodnej.
     virtual void wyslij(const std::string& wiadomosc) const = 0;
 };
 
+// Konkretne produkty implementują ten sam interfejs na różne sposoby.
 class Email : public Powiadomienie {
 public:
     void wyslij(const std::string& wiadomosc) const override {
@@ -35,12 +39,14 @@ public:
     }
 };
 
+// Interfejs fabryki deklaruje metodę tworzącą produkt.
 class FabrykaPowiadomien {
 public:
     virtual ~FabrykaPowiadomien() = default;
     virtual std::unique_ptr<Powiadomienie> utworzPowiadomienie() const = 0;
 };
 
+// Każda konkretna fabryka decyduje, jaki produkt utworzyć.
 class FabrykaEmail : public FabrykaPowiadomien {
 public:
     std::unique_ptr<Powiadomienie> utworzPowiadomienie() const override {
@@ -64,6 +70,7 @@ int main() {
         return 1;
     }
 
+    // Wskaźnik do interfejsu pozwala przechować dowolną konkretną fabrykę.
     std::unique_ptr<FabrykaPowiadomien> fabryka;
     if (typ == "email") {
         fabryka = std::make_unique<FabrykaEmail>();
@@ -74,6 +81,7 @@ int main() {
         return 1;
     }
 
+    // Klient tworzy produkt przez interfejs fabryki i korzysta z interfejsu produktu.
     std::unique_ptr<Powiadomienie> powiadomienie = fabryka->utworzPowiadomienie();
     powiadomienie->wyslij("Twoje zamówienie zostało przyjęte.");
 }
