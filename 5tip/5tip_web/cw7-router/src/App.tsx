@@ -13,9 +13,10 @@ const router = createBrowserRouter([
      element: <Layout />,
     children: [
       //elementy do Outlet
-      {index: true, element: <Home />},
-      {path:"about", element:<About />},
-      {path:"music", element:<Music />},
+      {index: true, Component: Home},
+      {path:"about", Component: About},
+     // {path:"music", element:<Music />},
+      {path:"music",Component: Music},
 
 
 
