@@ -14,6 +14,9 @@ const Layout = () => {
           <NavLink className="nav-link" to="/about">
             About
           </NavLink>
+          <NavLink className="nav-link" to="/music">
+            Music
+          </NavLink>
         </nav>
       </header>
       <main className="container">

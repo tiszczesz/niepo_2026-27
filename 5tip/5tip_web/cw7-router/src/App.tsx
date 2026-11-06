@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import PageNotFound from './pages/PageNotFound';
 import About from './pages/About';
+import Music from './pages/Music';
 
 const router = createBrowserRouter([
    { 
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       //elementy do Outlet
       {index: true, element: <Home />},
       {path:"about", element:<About />},
+      {path:"music", element:<Music />},
 
 
 
