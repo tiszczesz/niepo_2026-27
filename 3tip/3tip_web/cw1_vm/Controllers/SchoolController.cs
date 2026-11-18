@@ -17,6 +17,13 @@ namespace cw1_vm.Controllers
             List<StudentDepartmentVM> studentsWithDepartments = _schoolRepo.GetStudentsWithDepartments();
             return View(studentsWithDepartments);
         }
+        //usuwanie studenta
+        public IActionResult Delete(int id)
+        {
+            //todo usuwanie z bazy Mysql
+            _schoolRepo.DeleteStudent(id);
+            return RedirectToAction(nameof(List));
+        }
         public IActionResult ListDepartments()
         {
             //dane z modelu
