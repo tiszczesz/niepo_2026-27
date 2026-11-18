@@ -3,3 +3,18 @@
 }
 <h2>Dodawanie nowej klasy</h2>
 @* todo formularz *@
+<form asp-action="AddDeprtment" method="post">
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Name"></label>
+        <input class="col-6" type="text" asp-for="Name">
+        <span class="text-danger col-3" asp-validation-for="Name"></span>
+    </div>
+        <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Description"></label>
+        <input class="col-6" type="text" asp-for="Description">
+        <span class="text-danger col-3" asp-validation-for="Description"></span>
+    </div>
+     <div class="row m-2">
+        <button class="btn btn-outline-primary col-6 offset-3">Dodaj klasę</button>
+    </div>
+</form>
