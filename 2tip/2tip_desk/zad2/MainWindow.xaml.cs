@@ -23,7 +23,24 @@ namespace zad2
 
         private void btn_Run(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                string firstname = this.firstname.Text.Trim();
+                string lastname = this.lastname.Text.Trim();
+                int age = Convert.ToInt32(this.age.Text);
+                string ageResult = age >= 18 ? "jest pełnoletni" : "nie jest pełnoletni";
+                Result.Content = $"Imię: {firstname} nazwisko: {lastname} {ageResult}";
+                if(firstname.Length==0 || lastname.Length==0 || age <= 0)
+                {
+                    MessageBox.Show(
+                        "Wszystkie pola muszą być wypełnione i wiek musi być liczbą dodatnią.");
+                }
+            }
+            catch (FormatException exception)
+            {
+                MessageBox.Show($"Błąd formatu danych: {exception.Message}");
+            }
+           
         }
     }
 }
