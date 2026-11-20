@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styl.css" />
+    <title>Biuro turystyczne</title>
+  </head>
+  <body>
+    <header><h1>Rezerwacja wycieczek</h1></header>
+    <main>
+      <section id="columns">
+        <section id="column-one">
+          <nav>
+            <button id="uczestnik">Uczestnik</button>
+            <button id="rezerwacja">Rezerwacja</button>
+          </nav>
+          <section id="main-columns">
+            <section id="first">
+              <h2>Dane Klienta</h2>
+              <img src="osoba.png" alt="klient" />
+              <div>
+                <label for="firstname">Imię</label>
+                <input type="text" id="firstname" /><br />
+                <label for="lastname">Nazwisko</label>
+                <input type="text" id="lastname" /><br />
+                <p>
+                  <a href="wycieczki.html">Do strony głównej</a>
+                </p>
+              </div>
+            </section>
+            <section id="second">
+              <h2>Dane rezerwacji</h2>
+              <div>
+                <span id="down">&laquo;</span>
+                <img id="img" src="img/1.jpg" alt="wycieczka" />
+                <span id="up">&raquo;</span>
+                <h4 id="place">Barcelona</h4>
+                <label for="counter">Liczba osób</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="4"
+                  id="counter"
+                  disabled
+                /><br />
+                <label for="palce">Miejsce wylotu</label>
+                <select id="place" disabled>
+                  <option value="Warszawa">Warszawa</option>
+                  <option value="Kraków">Kraków</option>
+                  <option value="Wrocław">Wrocław</option>
+                </select>
+                <br />
+                <input
+                  type="radio"
+                  name="food"
+                  id="sniadania"
+                  disabled
+                  checked="true"
+                />
+                <label for="sniadania">Śniadania</label>
+                <input
+                  type="radio"
+                  name="food"
+                  id="sniadaniaObiadokolacje"
+                  disabled
+                />
+                <label for="sniadaniaObiadokolacje"
+                  >Śniadania i obiadokolacje</label
+                >
+                <input type="radio" name="food" id="AllInclusive" disabled />
+                <label for="AllInclusive">All inclusive</label>
+                <button type="button">Sprawdź cenę</button>
+              </div>
+            </section>
+          </section>
+        </section>
+        <aside id="column-two">
+          <img src="img/1.jpg" alt="" />
+          <img src="img/2.jpg" alt="" />
+          <img src="img/3.jpg" alt="" />
+        </aside>
+      </section>
+    </main>
+    <footer><p>Autor strony: <em>XXXXXXXXX</em></p></footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
