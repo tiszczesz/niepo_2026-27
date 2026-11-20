@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:5074
+
+### Pobierz uczniów
+GET {{baseUrl}}/api/sudents
+Accept: application/json
+

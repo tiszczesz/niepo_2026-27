@@ -10,5 +10,6 @@ var app = builder.Build();
 app.MapGet("/", () => "Hello World!");
 //app.MapGet("/api/sudents", () => _repo.GetAll());
 app.MapGet("/api/sudents", (IRepo repo) => repo.GetAll());
+app.MapGet("/api/sudents/id", (IRepo repo,int id) => repo.GetById(id));
 
 app.Run();

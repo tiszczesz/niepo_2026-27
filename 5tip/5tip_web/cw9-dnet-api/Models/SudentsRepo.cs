@@ -34,4 +34,10 @@ public class SudentsRepo : IRepo
         return sudents;
     }
 
+    public Sudent? GetById(int id)
+    {
+        return null;
+    }
+
+
 }
