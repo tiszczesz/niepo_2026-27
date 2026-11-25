@@ -12,6 +12,7 @@ namespace cw2_ef_mssql.Models
         public DbSet<Movie> Movies { get; set; }
 
 
+        //metoda do inicjalizacji danych w bazie danych
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
