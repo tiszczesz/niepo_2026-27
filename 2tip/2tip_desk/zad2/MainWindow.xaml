@@ -25,7 +25,7 @@
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="235" 
                 Height="26" Click="btn_Run" />
         <Label x:Name="Result" Content="Label" Canvas.Left="45" Canvas.Top="201"
-               HorizontalAlignment="Left" VerticalAlignment="Center" Width="224"/>
+               HorizontalAlignment="Left" VerticalAlignment="Center" />
 
     </Canvas>
 </Window>
