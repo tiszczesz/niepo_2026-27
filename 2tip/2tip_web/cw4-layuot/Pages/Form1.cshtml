@@ -1,0 +1,11 @@
+﻿@page
+@model cw4_layuot.Pages.Form1Model
+@{
+}
+<h2>Formularz 1</h2>
+<form asp-page="Form1" method="post">
+    <input type="number" placeholder="podaj liczbę" name="count"><br />
+    <button type="submit">Zatwierdź</button>
+</form>
+<hr>
+<div>@Model.Result</div>
