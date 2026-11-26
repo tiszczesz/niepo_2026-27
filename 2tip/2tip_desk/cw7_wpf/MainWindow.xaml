@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:cw7_wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="350">
-   <StackPanel Orientation="Vertical">
+   <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
        <TextBox x:Name="Count" FontSize="20"></TextBox>
        <Button x:Name="AddButton" Content="Generuj Liczby" FontSize="20" Click="GenerNumbers"></Button>
        
-       <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="List" Height="400"></ListBox>
+       <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="List" Height="400"
+                VerticalAlignment="Stretch"></ListBox>
    </StackPanel>
 </Window>
