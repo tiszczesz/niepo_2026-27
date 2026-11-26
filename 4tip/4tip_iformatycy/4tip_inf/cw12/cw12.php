@@ -8,6 +8,7 @@
 <body>
     pobrać z pliku games.txt i wyswietlić w tabelce html ostylowanej!!!
     co drugi wiersz na jasnozielono tło
-    nagłówek tabelki ostylowany specjalnie wyrównanie do środaka
+    nagłówek tabelki ostylowany specjalnie wyrównanie do środka
+    expload() tnie string na elementy do tablicy
 </body>
 </html>

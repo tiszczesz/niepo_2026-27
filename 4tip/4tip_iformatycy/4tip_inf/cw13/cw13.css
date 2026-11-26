@@ -1,0 +1,26 @@
+table {
+  margin: auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: solid black 1px;
+}
+td,
+th {
+  padding: 5px;
+  border: solid 1px gray;
+}
+th {
+  background-color: brown;
+  color: white;
+  text-align: center;
+}
+td {
+  color: brown;
+  text-align: left;
+}
+tr:nth-child(odd) {
+  background-color: lightgoldenrodyellow;
+}
+.right {
+  text-align: right;
+}
